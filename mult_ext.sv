@@ -38,8 +38,7 @@ always_comb
         endcase
 
     end
-    
-    else rd = 32'b0;
 
+    else rd = 32'b0;
 
 endmodule
