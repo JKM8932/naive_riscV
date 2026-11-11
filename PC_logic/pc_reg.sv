@@ -1,0 +1,14 @@
+module pc_reg #(
+    parameter DATA_WIDTH = 32
+)(
+    input   logic[DATA_WIDTH-1:0]               next_PC,
+    input   logic                               clk,
+    input   logic                               rst,
+    output  logic[DATA_WIDTH-1:0]               PC
+);
+
+always_ff @(posedge clk)
+    if (rst) PC <= {DATA_WIDTH{1'b0}};
+    else     PC <= next_PC;
+
+endmodule
